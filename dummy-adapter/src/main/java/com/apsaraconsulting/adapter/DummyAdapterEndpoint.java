@@ -1,77 +1,83 @@
 package com.apsaraconsulting.adapter;
 
-
-/**
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import java.net.URISyntaxException;
-
 import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
 import org.apache.camel.Producer;
 import org.apache.camel.spi.UriEndpoint;
 import org.apache.camel.spi.UriParam;
+import org.apache.camel.spi.UriPath;
 import org.apache.camel.support.DefaultEndpoint;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
- * Represents a www.Sample.com Camel endpoint.
+ * Dummy Adapter Camel Endpoint
  */
-@UriEndpoint(scheme = "dummy-adapter", syntax = "", title = "")
+@UriEndpoint(firstVersion = "1.0.0", scheme = "dummy-adapter", title = "Dummy Adapter",
+    syntax = "dummy-adapter:name", producerOnly = false, consumerOnly = false)
 public class DummyAdapterEndpoint extends DefaultEndpoint {
-    private DummyAdapterComponent component;
 
-    private transient Logger logger = LoggerFactory.getLogger(DummyAdapterEndpoint.class);
+    @UriPath
+    private String name;
 
-    @UriParam
-    private String greetingsMessage;
+    @UriParam(defaultValue = "Hello")
+    private String greeting = "Hello";
 
-	public String getGreetingsMessage() {
-		return greetingsMessage;
-	}
+    @UriParam(defaultValue = "false")
+    private boolean uppercase = false;
 
-	public void setGreetingsMessage(String greetingsMessage) {
-		this.greetingsMessage = greetingsMessage;
-	}
+    @UriParam(defaultValue = "1000")
+    private long delay = 1000;
 
-	public DummyAdapterEndpoint() {
+    public DummyAdapterEndpoint(String uri, DummyAdapterComponent component) {
+        super(uri, component);
     }
 
-    public DummyAdapterEndpoint(final String endpointUri, final DummyAdapterComponent component) throws URISyntaxException {
-        super(endpointUri, component);
-        this.component = component;
-    }
-
-    public DummyAdapterEndpoint(final String uri, final String remaining, final DummyAdapterComponent component) throws URISyntaxException {
-        this(uri, component);
-    }
-
+    @Override
     public Producer createProducer() throws Exception {
         return new DummyAdapterProducer(this);
     }
 
+    @Override
     public Consumer createConsumer(Processor processor) throws Exception {
-        final DummyAdapterConsumer consumer = new DummyAdapterConsumer(this, processor);
+        DummyAdapterConsumer consumer = new DummyAdapterConsumer(this, processor);
         configureConsumer(consumer);
         return consumer;
     }
 
+    @Override
     public boolean isSingleton() {
         return true;
+    }
+
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGreeting() {
+        return greeting;
+    }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
+    }
+
+    public boolean isUppercase() {
+        return uppercase;
+    }
+
+    public void setUppercase(boolean uppercase) {
+        this.uppercase = uppercase;
+    }
+
+    public long getDelay() {
+        return delay;
+    }
+
+    public void setDelay(long delay) {
+        this.delay = delay;
     }
 }

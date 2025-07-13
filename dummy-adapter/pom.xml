@@ -50,11 +50,11 @@
       <scope>provided</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.apsaraconsulting.skyvva</groupId>
-      <artifactId>skyvva-salesforce-adapter-dependencies</artifactId>
-      <version>1.0.0</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.apsaraconsulting.skyvva</groupId>-->
+<!--      <artifactId>skyvva-salesforce-adapter-dependencies</artifactId>-->
+<!--      <version>1.0.0</version>-->
+<!--    </dependency>-->
 
     <!-- SAP HCI logging/credential management dependencies -->
     <dependency>
@@ -191,22 +191,18 @@
         <configuration>
           <excludeDependencies>true</excludeDependencies>
           <instructions>
-            <Private-Package>
-              com.apsaraconsulting.skyvvaadapter.internal.*,
-              com.apsaraconsulting.skyvvaadapter.api.*,
-              com.iservice.*,
-              com.model.iservice.*,
-              com.sforce.soap.*,
-            </Private-Package>
             <Export-Package>
-              com.apsaraconsulting.skyvvaadapter
+              com.apsaraconsulting.adapter
             </Export-Package>
             <Import-Package>
               org.apache.karaf.bundle.core;resolution:=optional,
               org.osgi.framework.*,
+              org.apache.camel.*;version="[3.14,4)",
+              org.slf4j.*;version="[1.7,2)",
               *
             </Import-Package>
-            <Export-Service>org.apache.camel.spi.ComponentResolver;component=skyvva-salesforce</Export-Service>
+            <Export-Service>org.apache.camel.spi.ComponentResolver;component=dummy-adapter</Export-Service>
+            <Bundle-Activator>com.apsaraconsulting.adapter.DummyAdapterActivator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>
@@ -224,23 +220,23 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <version>2.10</version>
         <executions>
-          <execution>
-            <id>copy-dependencies</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/libs</outputDirectory>
-              <overWriteReleases>false</overWriteReleases>
-              <overWriteSnapshots>false</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <includeScope>runtime</includeScope>
-              <includeArtifactIds>
-                skyvva-salesforce-adapter-dependencies
-              </includeArtifactIds>
-            </configuration>
-          </execution>
+<!--          <execution>-->
+<!--            <id>copy-dependencies</id>-->
+<!--            <phase>package</phase>-->
+<!--            <goals>-->
+<!--              <goal>copy-dependencies</goal>-->
+<!--            </goals>-->
+<!--            <configuration>-->
+<!--              <outputDirectory>${project.build.directory}/libs</outputDirectory>-->
+<!--              <overWriteReleases>false</overWriteReleases>-->
+<!--              <overWriteSnapshots>false</overWriteSnapshots>-->
+<!--              <overWriteIfNewer>true</overWriteIfNewer>-->
+<!--              <includeScope>runtime</includeScope>-->
+<!--              <includeArtifactIds>-->
+<!--                skyvva-salesforce-adapter-dependencies-->
+<!--              </includeArtifactIds>-->
+<!--            </configuration>-->
+<!--          </execution>-->
           <execution>
             <id>copy-artifacts</id>
             <phase>package</phase>

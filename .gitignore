@@ -1,0 +1,21 @@
+# excluded component for safety (plan.io limits commit size to ~20MB)
+# ignore every camel component except camel-salesforce
+.metadata/
+.recommenders/
+.settings/
+.idea/
+*.iml
+*.iws
+Resources/**
+camel-ftp/**
+camel-http/**
+camel-jetty-common/**
+camel-netty4/**
+camel-netty4-http/**
+camel-servlet/**
+camel-servletlistener/**
+xmlpull/**
+*.class
+*.rar
+target
+

@@ -1,0 +1,5 @@
+{
+  "INTEGRATIONID" : "Winter 18",
+  "INTERFACENAME" : "Query_Account_OUT",
+  "{!BillingCountry}" : "Germany"
+}

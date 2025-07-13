@@ -1,0 +1,16 @@
+{
+  "Product": [
+    {
+      "Id": "01tA0000002beA4IAI",
+      "SAP_Product_Nr__c": "T-RS105",
+      "Name": "Screw",
+      "Description": "Screw"
+    },
+    {
+      "Id": "01tA0000002beA5IAI",
+      "SAP_Product_Nr__c": "T-RJ224",
+      "Name": "Lemon Juice",
+      "Description": "Lemon Juice"
+    }
+  ]
+}

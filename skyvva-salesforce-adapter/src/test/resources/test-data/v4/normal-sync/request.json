@@ -1,0 +1,18 @@
+{
+  "ERP_DEBTOR_ID__c": "101",
+  "AccountNumber": "20001",
+  "Name": "TestAccount1-SB",
+  "BillingCountry": "Cambodia1",
+  "BillingCity": "PhnomPenh1",
+  "Description": "from postman with json",
+  "Contact": [
+    {
+      "ERP_Contact_ID__c": "201",
+      "LastName": "TestContact_01",
+      "FirstName": "DContact2",
+      "Email": "dtest.2019_201@gmail.com",
+      "Phone": "301898465",
+      "Description": "From postman with json"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:ISTRUCTURE_Account
+  xmlns:ns1="http://soap.sforce.com/schemas/class/skyvvasolutions/IServices">
+  <fromSystem>Ly-Na</fromSystem>
+  <targetObject>Ticket_12470_V2Account_IN</targetObject>
+  <ListOfAccounts>
+    <Account>
+      <BillingCity>PhnomPenh2</BillingCity>
+      <BillingCountry>DE</BillingCountry>
+      <BillingPostalCode>82134</BillingPostalCode>
+      <BillingState>Bavaria</BillingState>
+      <BillingStreet>Gisala Platz 22</BillingStreet>
+      <ERP_DEBTOR_ID__c>87431</ERP_DEBTOR_ID__c>
+      <Name>TestAccount2-SB-Mony</Name>
+    </Account>
+    <Account>
+      <BillingCity>PhnomPenh2</BillingCity>
+      <BillingCountry>DE</BillingCountry>
+      <BillingPostalCode>82134</BillingPostalCode>
+      <BillingState>Bavaria</BillingState>
+      <BillingStreet>Gisala Platz 22</BillingStreet>
+      <ERP_DEBTOR_ID__c>87432</ERP_DEBTOR_ID__c>
+      <Name>TestAccount2-SB-Mony</Name>
+      <Contact>
+        <AccountId>87432</AccountId>
+        <Academic_Title__c/>
+        <ERP_Contact_ID__c>8534213</ERP_Contact_ID__c>
+        <Email>lyna.phu@apsara-consulting.com</Email>
+        <Fax>+491520399997</Fax>
+        <FirstName>BeforeMapping</FirstName>
+        <LastName>Oliver</LastName>
+        <Salutation>Mr.</Salutation>
+        <Title>Doctor</Title>
+      </Contact>
+      <Contact>
+        <AccountId>87432</AccountId>
+        <Academic_Title__c/>
+        <ERP_Contact_ID__c>8534213</ERP_Contact_ID__c>
+        <Email>lyna.phu@apsara-consulting.com</Email>
+        <Fax>+491520399997</Fax>
+        <FirstName>BeforeMapping</FirstName>
+        <LastName>Oliver</LastName>
+        <Salutation>Mr.</Salutation>
+        <Title>Doctor</Title>
+      </Contact>
+      <Contact>
+        <AccountId>87432</AccountId>
+        <Academic_Title__c/>
+        <ERP_Contact_ID__c>8534213</ERP_Contact_ID__c>
+        <Email>lyna.phu@apsara-consulting.com</Email>
+        <Fax>+491520399997</Fax>
+        <FirstName>BeforeMapping</FirstName>
+        <LastName>Oliver</LastName>
+        <Salutation>Mr.</Salutation>
+        <Title>Doctor</Title>
+      </Contact>
+    </Account>
+  </ListOfAccounts>
+</ns1:ISTRUCTURE_Account>

@@ -1,0 +1,7 @@
+.idea
+*.iml
+*.iws
+/infinitest.filters
+target
+camel-apt-error.log
+test-salesforce-login.properties

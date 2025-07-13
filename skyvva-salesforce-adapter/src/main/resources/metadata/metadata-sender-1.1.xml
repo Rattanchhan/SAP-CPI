@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentMetadata ComponentId="ctype::Adapter/cname::SkyvvaSalesforce/vendor::testing.com/version::1.1.1"
+                   ComponentName="SkyvvaSalesforce" UIElementType="Adapter" IsExtension="false" IsFinal="true"
+                   IsPreserves="true" IsDefaultGenerator="true" ComponentDisplayName="SkyvvaSalesforce"
+                   xmlns:gen="http://www.sap.hci.adk.com/gen" xmlns:bp="http://www.adk.gen/xmlns/blueprint">
+  <Variant VariantName="Salesforce Component Sender"
+           VariantId="ctype::AdapterVariant/cname::SkyvvaSalesforce/vendor::testing.com/tp::https/mp::skyvva/direction::Sender/version::1.1.1"
+           MetadataVersion="2.0" gen:RuntimeComponentBaseUri="skyvva-salesforce" AttachmentBehavior="Preserve">
+    <InputContent Cardinality="1" Scope="outsidepool" MessageCardinality="1" isStreaming="false">
+      <Content>
+        <ContentType>Any</ContentType>
+        <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></Schema>
+      </Content>
+    </InputContent>
+    <OutputContent Cardinality="1" Scope="outsidepool" MessageCardinality="1" isStreaming="false">
+      <Content>
+        <ContentType>Any</ContentType>
+        <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></Schema>
+      </Content>
+    </OutputContent>
+    <Tab id="connection">
+      <GuiLabels>
+        <Label language="EN">Connection</Label>
+        <Label language="DE">Connection</Label>
+      </GuiLabels>
+      <AttributeGroup id="LoginDetails">
+        <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LoginDetails
+        </Name>
+        <GuiLabels>
+          <Label language="EN">Login-Config</Label>
+          <Label language="DE">Login-Config</Label>
+        </GuiLabels>
+        <AttributeReference>
+          <ReferenceName>loginUrl</ReferenceName>
+          <description>Configure Login Url</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>userCredential</ReferenceName>
+          <description>Configure User Credential</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>clientCredential</ReferenceName>
+          <description>Configure OAuth Client Credential</description>
+        </AttributeReference>
+      </AttributeGroup>
+    </Tab>
+    <Tab id="SalesForce">
+      <GuiLabels guid="906cd8d3-a91e-472c-9d58-aa4d3c6b2109">
+        <Label language="EN">Skyvva</Label>
+        <Label language="DE">Skyvva</Label>
+      </GuiLabels>
+
+      <AttributeGroup id="SalesforceEndpointConfig">
+        <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Salesforce Endpoint Config
+        </Name>
+        <GuiLabels guid="e28740bb-2e31-4a6a-991e-45d35c26437e">
+          <Label language="EN">Salesforce Endpoint Config</Label>
+          <Label language="DE">Salesforce Endpoint Config</Label>
+        </GuiLabels>
+        <!-- This attribute enables/disables logging -->
+        <AttributeReference>
+          <ReferenceName>loggingOption</ReferenceName>
+          <description>Configure logger</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>apiVersion</ReferenceName>
+          <description>Salesforce Api Version</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>requestFormat</ReferenceName>
+          <description>Configure Format</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectName</ReferenceName>
+          <description>Configure S Object Name</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectId</ReferenceName>
+          <description>Configure S Object Id</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectFields</ReferenceName>
+          <description>Configure S Object Fields</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectIdName</ReferenceName>
+          <description>Configure S Object Id Name</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectIdValue</ReferenceName>
+          <description>Configure S Object Id Value</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectBlobFieldName</ReferenceName>
+          <description>Configure S Object Blob Field Name</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectClass</ReferenceName>
+          <description>Configure S Object Class</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectQuery</ReferenceName>
+          <description>Configure S Object Query</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>sObjectSearch</ReferenceName>
+          <description>Configure S Object Search</description>
+        </AttributeReference>
+      </AttributeGroup>
+    </Tab>
+    <Tab id="streamingapi">
+      <GuiLabels>
+        <Label language="EN">Streaming API</Label>
+        <Label language="DE">Streaming API</Label>
+      </GuiLabels>
+      <AttributeGroup id="StreamingAPIConfig">
+        <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">StreamingAPIConfig
+        </Name>
+        <GuiLabels>
+          <Label language="EN">Streaming API</Label>
+          <Label language="DE">Streaming API</Label>
+        </GuiLabels>
+        <AttributeReference>
+          <ReferenceName>topic</ReferenceName>
+          <description>Configure Topic</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>updateTopic</ReferenceName>
+          <description>Configure Update Topic</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>notifyForFields</ReferenceName>
+          <EditCondition>
+            <AttributeName>updateTopic</AttributeName>
+            <AttributeValue>1</AttributeValue>
+          </EditCondition>
+          <description>Configure Notify For Fields</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>notifyForOperations</ReferenceName>
+          <EditCondition>
+            <AttributeName>updateTopic</AttributeName>
+            <AttributeValue>1</AttributeValue>
+          </EditCondition>
+          <description>Configure Notify For Operations</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>notifyForOperationCreate</ReferenceName>
+          <EditCondition>
+            <AttributeName>updateTopic</AttributeName>
+            <AttributeValue>1</AttributeValue>
+          </EditCondition>
+          <description>Configure Notify For Operation Create</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>notifyForOperationUpdate</ReferenceName>
+          <EditCondition>
+            <AttributeName>updateTopic</AttributeName>
+            <AttributeValue>1</AttributeValue>
+          </EditCondition>
+          <description>Configure Notify For Operation Update</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>notifyForOperationDelete</ReferenceName>
+          <EditCondition>
+            <AttributeName>updateTopic</AttributeName>
+            <AttributeValue>1</AttributeValue>
+          </EditCondition>
+          <description>Configure Notify For Operation Delete</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>notifyForOperationUndelete</ReferenceName>
+          <EditCondition>
+            <AttributeName>updateTopic</AttributeName>
+            <AttributeValue>1</AttributeValue>
+          </EditCondition>
+          <description>Configure Notify For Operation Undelete</description>
+        </AttributeReference>
+      </AttributeGroup>
+    </Tab>
+    <AllowedHeaders>
+      CamelSalesforceEventUuid,CamelSalesforceReplayId,CamelSalesforceEventType,CamelSalesforcePlatformEventSchema,CamelSalesforceCreatedDate,CamelSalesforceChannel,CamelSalesforceClientId
+    </AllowedHeaders>
+  </Variant>
+  <AttributeMetadata>
+    <Name>skyvvaApiVersion</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>V2</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="a2e64522-0ef5-497f-aafe-2fb1be76d655">
+      <Label language="EN">Skyvva API Version</Label>
+      <Label language="DE">Skyvva API Version</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>V2</Value>
+        <GuiLabels guid="a2e64522-0ef5-497f-0afe-2fb1be76d655">
+          <Label language="EN">V2</Label>
+          <Label language="DE">V2</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>V3</Value>
+        <GuiLabels guid="a2e64522-0ef5-497f-1afe-2fb1be76d655">
+          <Label language="EN">V3</Label>
+          <Label language="DE">V3</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>salesforceIntegration</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="4c8ec568-3846-4486-aeb9-92e65e281d18">
+      <Label language="EN">Integration</Label>
+      <Label language="DE">Integration</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>salesforceInterface</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="4c8ec568-3846-4486-aeb9-92e65e281d18">
+      <Label language="EN">Interface</Label>
+      <Label language="DE">Interface</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>skyvvaIntegrationMode</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>SYNCHRONOUS</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="94ebaa14-539d-405f-897e-0406e2679c96">
+      <Label language="EN">Mode</Label>
+      <Label language="DE">Mode</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>ASYNCHRONOUS</Value>
+        <GuiLabels guid="f869b086-d731-46fb-a02d-17009904d276">
+          <Label language="EN">Asynchronous</Label>
+          <Label language="DE">Asynchronous</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SYNCHRONOUS</Value>
+        <GuiLabels guid="8ac32233-81d1-46bf-81e6-bd45664c7101">
+          <Label language="EN">Synchronous</Label>
+          <Label language="DE">Synchronous</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SKYVVA_BATCH</Value>
+        <GuiLabels guid="12a7e2f7-8579-432d-b543-382b076eed52">
+          <Label language="EN">Skyvva Batch</Label>
+          <Label language="DE">Skyvva Batch</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SKYVVA_BULK</Value>
+        <GuiLabels guid="415d9818-c477-40d0-bcf1-9d6864b31970">
+          <Label language="EN">Skyvva Bulk</Label>
+          <Label language="DE">Skyvva Bulk</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SALESFORCE_BULK</Value>
+        <GuiLabels guid="9d3ca90f-095e-4643-b624-be715415c14c">
+          <Label language="EN">Salesforce Bulk</Label>
+          <Label language="DE">Salesforce Bulk</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>AUTO_SWITCH</Value>
+        <GuiLabels guid="7ca78d3c-685c-4b99-ad50-556248a82250">
+          <Label language="EN">Auto-Switch</Label>
+          <Label language="DE">Auto-Switch</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>requestFormat</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>JSON</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="18f1c8de-1e62-4aca-b6b5-7a0df22964bd">
+      <Label language="EN">Request Format</Label>
+      <Label language="DE">Request Format</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>JSON</Value>
+        <GuiLabels guid="c01288f8-580a-4f87-85b3-803ce57c95dd">
+          <Label language="EN">JSON</Label>
+          <Label language="DE">JSON</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>XML</Value>
+        <GuiLabels guid="d8ae009e-98b8-4bd3-88b7-982d345d4ff9">
+          <Label language="EN">XML</Label>
+          <Label language="DE">XML</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>responseFormat</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>JSON</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="44f52b92-e97f-403a-ba05-9c8c60803a38">
+      <Label language="EN">Response Format</Label>
+      <Label language="DE">Response Format</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>JSON</Value>
+        <GuiLabels guid="e752989c-ec30-4eb2-b7fa-0d219c4264f2">
+          <Label language="EN">JSON</Label>
+          <Label language="DE">JSON</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>XML</Value>
+        <GuiLabels guid="1cd8c9a3-5da1-4fb4-82ea-eaca1c11e523">
+          <Label language="EN">XML</Label>
+          <Label language="DE">XML</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>skyvvaAppVersion</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>2.48.0</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="a2e64522-0ef5-497f-aafe-1fb1be76d65c">
+      <Label language="EN">Skyvva App Version</Label>
+      <Label language="DE">Skyvva App Version</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>apexUrl</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="200fc1ca-2986-4d77-8b8d-f094bc191caa">
+      <Label language="EN">Apex Url</Label>
+      <Label language="DE">Apex Url</Label>
+    </GuiLabels>
+    <FixedValues>
+      <isEditable>true</isEditable>
+      <FixedValue>
+        <Value>skyvvasolutions/Integrate</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a6">
+          <Label language="EN">Integrate</Label>
+          <Label language="DE">Integrate</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/IntegrateSynchronous</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a7">
+          <Label language="EN">IntegrateSynchronous</Label>
+          <Label language="DE">IntegrateSynchronous</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/integrateBatch</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a8">
+          <Label language="EN">integrateBatch</Label>
+          <Label language="DE">integrateBatch</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/SearchService</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a9">
+          <Label language="EN">SearchService</Label>
+          <Label language="DE">SearchService</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>apexMethod</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>POST</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="989a0e67-fadc-4785-b39e-951a27ff0711">
+      <Label language="EN">Apex Method</Label>
+      <Label language="DE">Apex Method</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>GET</Value>
+        <GuiLabels>
+          <Label language="EN">GET</Label>
+          <Label language="DE">GET</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>POST</Value>
+        <GuiLabels>
+          <Label language="EN">POST</Label>
+          <Label language="DE">POST</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>PUT</Value>
+        <GuiLabels>
+          <Label language="EN">PUT</Label>
+          <Label language="DE">PUT</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>PATCH</Value>
+        <GuiLabels>
+          <Label language="EN">PATCH</Label>
+          <Label language="DE">PATCH</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>DELETE</Value>
+        <GuiLabels>
+          <Label language="EN">DELETE</Label>
+          <Label language="DE">DELETE</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>loggingOption</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>None</Default>
+    <Length></Length>
+    <isparameterized>false</isparameterized>
+    <GuiLabels guid="2e3d28e5-af2d-4730-bfb6-198a42f60c3b">
+      <Label language="EN">Logging option</Label>
+      <Label language="DE">Logging option</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>None</Value>
+        <GuiLabels guid="8fb19dc9-01af-45c8-8de8-594c6a5971b3">
+          <Label language="EN">Default</Label>
+          <Label language="DE">Default</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Trace</Value>
+        <GuiLabels guid="80d813eb-9c73-4c2d-a07c-f3c6216a3eba">
+          <Label language="EN">Trace level</Label>
+          <Label language="DE">Trace level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Debug</Value>
+        <GuiLabels guid="fc09960c-8264-409d-8a0b-44fe2b03ca25">
+          <Label language="EN">Debug level</Label>
+          <Label language="DE">Debug level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Info</Value>
+        <GuiLabels guid="5f20106b-dde5-47c1-8dee-e664a2eb6e3a">
+          <Label language="EN">Info level</Label>
+          <Label language="DE">Info level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Warning</Value>
+        <GuiLabels guid="1753676e-8d56-4b19-9a6c-a8c5635ef3ac">
+          <Label language="EN">Warning level</Label>
+          <Label language="DE">Warning level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Error</Value>
+        <GuiLabels guid="d99d0a42-8592-47dc-8df8-a4417129c5e4">
+          <Label language="EN">Error level</Label>
+          <Label language="DE">Error level</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>enableRetry</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:boolean</DataType>
+    <Default>false</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="f3d006c7-8553-4949-84dd-6288da5fa888">
+      <Label language="EN">Enable retry for fatal connectivity errors</Label>
+      <Label language="DE">Enable retry for fatal connectivity errors</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>httpClientTimeout</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>60</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="3726c0ae-c257-4f3e-bf68-d04cd5487bfc">
+      <Label language="EN">HTTP client timeout (sec)</Label>
+      <Label language="DE">HTTP client timeout (sec)</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>notifyForOperations</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>false</isparameterized>
+    <GuiLabels guid="b07c73a6-7c27-48d9-9605-947d85b38ea9">
+      <Label language="EN">Notify For Operations</Label>
+      <Label language="DE">Notify For Operations</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>ALL</Value>
+        <GuiLabels guid="3c813852-68f4-4134-9d8d-721c3f15b3a0">
+          <Label language="EN">ALL</Label>
+          <Label language="DE">ALL</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>CREATE</Value>
+        <GuiLabels guid="e5dec3f0-4d9f-47ab-ae68-9ccfea32b423">
+          <Label language="EN">CREATE</Label>
+          <Label language="DE">CREATE</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>EXTENDED</Value>
+        <GuiLabels guid="37175bf8-1e77-4169-b8a4-99287f62f204">
+          <Label language="EN">EXTENDED</Label>
+          <Label language="DE">EXTENDED</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>UPDATE</Value>
+        <GuiLabels guid="8d133b55-e14b-4f9b-8aeb-d1fd05bd106f">
+          <Label language="EN">UPDATE</Label>
+          <Label language="DE">UPDATE</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectQuery</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="9d118450-a9b3-4c8f-8bd1-e63d79597596">
+      <Label language="EN">S Object Query</Label>
+      <Label language="DE">S Object Query</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>notifyForOperationCreate</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:boolean</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="61e7a6ee-b110-432b-a379-024aac9f5d1c">
+      <Label language="EN">Notify For Operation Create</Label>
+      <Label language="DE">Notify For Operation Create</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectClass</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="c694b41d-a160-4c31-9dca-fd1ba77b957a">
+      <Label language="EN">S Object Class</Label>
+      <Label language="DE">S Object Class</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>apiVersion</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>53.0</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="dac45c8d-0253-484f-bb70-2d0101ef9c1f">
+      <Label language="EN">Salesforce Api Version</Label>
+      <Label language="DE">Salesforce Api Version</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>contentType</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>false</isparameterized>
+    <GuiLabels guid="4390502a-da4d-442a-b0bb-b2d799ec36f4">
+      <Label language="EN">Content Type</Label>
+      <Label language="DE">Content Type</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>XML</Value>
+        <GuiLabels guid="10721c01-63ff-4899-b8cb-f168de121c0c">
+          <Label language="EN">XML</Label>
+          <Label language="DE">XML</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>CSV</Value>
+        <GuiLabels guid="16f62349-6ca1-4d4a-99b3-6114e75b49d1">
+          <Label language="EN">CSV</Label>
+          <Label language="DE">CSV</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>ZIP_CSV</Value>
+        <GuiLabels guid="db651e8a-eac3-4a27-a1f0-15aad32adef7">
+          <Label language="EN">ZIP_CSV</Label>
+          <Label language="DE">ZIP_CSV</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>ZIP_XML</Value>
+        <GuiLabels guid="30029e50-3b71-4269-a95f-8a31a343b4df">
+          <Label language="EN">ZIP_XML</Label>
+          <Label language="DE">ZIP_XML</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectName</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="2e56b75a-24ab-4bf1-8387-1cc353507f12">
+      <Label language="EN">S Object Name</Label>
+      <Label language="DE">S Object Name</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectFields</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="633702c8-7e5a-4aca-91ad-1e8982ad2636">
+      <Label language="EN">S Object Fields</Label>
+      <Label language="DE">S Object Fields</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectBlobFieldName</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="7745a359-14fb-4f3d-b06f-bc31051718e4">
+      <Label language="EN">S Object Blob Field Name</Label>
+      <Label language="DE">S Object Blob Field Name</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectId</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="a6c48311-5bfb-4c08-9046-4d7482cf0275">
+      <Label language="EN">S Object Id</Label>
+      <Label language="DE">S Object Id</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectSearch</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="8c0b8ac1-8518-4199-840d-a7bd87679d29">
+      <Label language="EN">S Object Search</Label>
+      <Label language="DE">S Object Search</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>notifyForOperationUpdate</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:boolean</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="c9f6cd73-823e-49c0-a61d-4fcef70442c9">
+      <Label language="EN">Notify For Operation Update</Label>
+      <Label language="DE">Notify For Operation Update</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectIdName</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="ed10d196-cca8-4e76-945b-8a4559bbefc0">
+      <Label language="EN">S Object Id Name</Label>
+      <Label language="DE">S Object Id Name</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>userCredential</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <!-- <AttributeBehavior>SecureAlias</AttributeBehavior> -->
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="ecdcc7cc-1424-4c79-9745-4f0d2af5c088">
+      <Label language="EN">User Credential</Label>
+      <Label language="DE">User Credential</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>clientCredential</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <!-- <AttributeBehavior>SecureAlias</AttributeBehavior> -->
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="7f0872e8-099b-4654-8004-46cf28456d8a">
+      <Label language="EN">Client Credential</Label>
+      <Label language="DE">Client Credential</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>notifyForOperationUndelete</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:boolean</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="611f15c9-85d5-465b-a0dd-134576c87d80">
+      <Label language="EN">Notify For Operation Undelete</Label>
+      <Label language="DE">Notify For Operation Undelete</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>updateTopic</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:boolean</DataType>
+    <Default>0</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="9ff6bb08-8511-4cf7-b27e-880d3e95d5c2">
+      <Label language="EN">Update Topic</Label>
+      <Label language="DE">Update Topic</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>notifyForFields</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>false</isparameterized>
+    <GuiLabels guid="f74dc9b5-b6b9-43dc-8b6e-4a6d3e3a5734">
+      <Label language="EN">Notify For Fields</Label>
+      <Label language="DE">Notify For Fields</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>ALL</Value>
+        <GuiLabels guid="0ccdff3a-56cd-49d3-a400-557e4ab826db">
+          <Label language="EN">ALL</Label>
+          <Label language="DE">ALL</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>WHERE</Value>
+        <GuiLabels guid="ff45ccae-ee18-49ad-9463-f0234945c936">
+          <Label language="EN">WHERE</Label>
+          <Label language="DE">WHERE</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SELECT</Value>
+        <GuiLabels guid="360c62d1-aca2-4542-87e5-f432fda3313b">
+          <Label language="EN">SELECT</Label>
+          <Label language="DE">SELECT</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>REFERENCED</Value>
+        <GuiLabels guid="53e2e6ad-ab33-4554-b21d-fd6c0fef1798">
+          <Label language="EN">REFERENCED</Label>
+          <Label language="DE">REFERENCED</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>sObjectIdValue</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="92bac264-9286-49f3-913c-bc76dd37ef00">
+      <Label language="EN">S Object Id Value</Label>
+      <Label language="DE">S Object Id Value</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>loginUrl</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="b365d933-6d63-41e1-b16e-4bdd3e518b0c">
+      <Label language="EN">Login Url</Label>
+      <Label language="DE">Login Url</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>notifyForOperationDelete</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:boolean</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="5119d647-d9ce-41dd-b995-8430dff605b4">
+      <Label language="EN">Notify For Operation Delete</Label>
+      <Label language="DE">Notify For Operation Delete</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>topic</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="c89c8ec0-43ac-4029-9d38-03f0e5392afc">
+      <Label language="EN">Topic</Label>
+      <Label language="DE">Topic</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+</ComponentMetadata>

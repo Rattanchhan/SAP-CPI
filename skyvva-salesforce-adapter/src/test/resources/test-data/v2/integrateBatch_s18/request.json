@@ -1,0 +1,23 @@
+{
+  "integrationid" : "Winter 18",
+  "interfacename" : "integrateBatch",
+  "batchmode" : "true",
+  "messages": [
+    {
+      "BillingCity": "Ismaning",
+      "BillingPostalCode": "82140",
+      "BillingCountry": "UK",
+      "Name": "Ahmed Keihel AG",
+      "BillingStreet": "CPI 9999",
+      "ERP_DEBTOR_ID__c": "0000301557"
+    },
+    {
+      "BillingCity": "Ismaning",
+      "BillingPostalCode": "82140",
+      "BillingCountry": "UK",
+      "Name": "Ahmed Keihel AG",
+      "BillingStreet": "CPI 9999",
+      "ERP_DEBTOR_ID__c": "0000301557"
+    }
+  ]
+}

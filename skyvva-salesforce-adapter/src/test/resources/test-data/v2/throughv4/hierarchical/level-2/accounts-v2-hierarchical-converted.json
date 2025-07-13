@@ -1,0 +1,238 @@
+[
+  {
+    "oneRecord" : [
+      {
+        "name" : "Account.BillingCity",
+        "value" : "PhnomPenh2"
+      },
+      {
+        "name" : "Account.BillingCountry",
+        "value" : "DE"
+      },
+      {
+        "name" : "Account.BillingPostalCode",
+        "value" : "82134"
+      },
+      {
+        "name" : "Account.BillingState",
+        "value" : "Bavaria"
+      },
+      {
+        "name" : "Account.BillingStreet",
+        "value" : "Gisala Platz 22"
+      },
+      {
+        "name" : "Account.ERP_DEBTOR_ID__c",
+        "value" : "87431"
+      },
+      {
+        "name" : "Account.Name",
+        "value" : "TestAccount2-SB-Mony"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "Account.BillingCity",
+        "value" : "PhnomPenh2"
+      },
+      {
+        "name" : "Account.BillingCountry",
+        "value" : "DE"
+      },
+      {
+        "name" : "Account.BillingPostalCode",
+        "value" : "82134"
+      },
+      {
+        "name" : "Account.BillingState",
+        "value" : "Bavaria"
+      },
+      {
+        "name" : "Account.BillingStreet",
+        "value" : "Gisala Platz 22"
+      },
+      {
+        "name" : "Account.ERP_DEBTOR_ID__c",
+        "value" : "87432"
+      },
+      {
+        "name" : "Account.Name",
+        "value" : "TestAccount2-SB-Mony"
+      },
+      {
+        "name" : "Contact.AccountId",
+        "value" : "87432"
+      },
+      {
+        "name" : "Contact.Academic_Title__c",
+        "value" : ""
+      },
+      {
+        "name" : "Contact.ERP_Contact_ID__c",
+        "value" : "8534213"
+      },
+      {
+        "name" : "Contact.Email",
+        "value" : "lyna.phu@apsara-consulting.com"
+      },
+      {
+        "name" : "Contact.Fax",
+        "value" : "+491520399997"
+      },
+      {
+        "name" : "Contact.FirstName",
+        "value" : "BeforeMapping"
+      },
+      {
+        "name" : "Contact.LastName",
+        "value" : "Oliver"
+      },
+      {
+        "name" : "Contact.Salutation",
+        "value" : "Mr."
+      },
+      {
+        "name" : "Contact.Title",
+        "value" : "Doctor"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "Account.BillingCity",
+        "value" : "PhnomPenh2"
+      },
+      {
+        "name" : "Account.BillingCountry",
+        "value" : "DE"
+      },
+      {
+        "name" : "Account.BillingPostalCode",
+        "value" : "82134"
+      },
+      {
+        "name" : "Account.BillingState",
+        "value" : "Bavaria"
+      },
+      {
+        "name" : "Account.BillingStreet",
+        "value" : "Gisala Platz 22"
+      },
+      {
+        "name" : "Account.ERP_DEBTOR_ID__c",
+        "value" : "87432"
+      },
+      {
+        "name" : "Account.Name",
+        "value" : "TestAccount2-SB-Mony"
+      },
+      {
+        "name" : "Contact.AccountId",
+        "value" : "87432"
+      },
+      {
+        "name" : "Contact.Academic_Title__c",
+        "value" : ""
+      },
+      {
+        "name" : "Contact.ERP_Contact_ID__c",
+        "value" : "8534213"
+      },
+      {
+        "name" : "Contact.Email",
+        "value" : "lyna.phu@apsara-consulting.com"
+      },
+      {
+        "name" : "Contact.Fax",
+        "value" : "+491520399997"
+      },
+      {
+        "name" : "Contact.FirstName",
+        "value" : "BeforeMapping"
+      },
+      {
+        "name" : "Contact.LastName",
+        "value" : "Oliver"
+      },
+      {
+        "name" : "Contact.Salutation",
+        "value" : "Mr."
+      },
+      {
+        "name" : "Contact.Title",
+        "value" : "Doctor"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "Account.BillingCity",
+        "value" : "PhnomPenh2"
+      },
+      {
+        "name" : "Account.BillingCountry",
+        "value" : "DE"
+      },
+      {
+        "name" : "Account.BillingPostalCode",
+        "value" : "82134"
+      },
+      {
+        "name" : "Account.BillingState",
+        "value" : "Bavaria"
+      },
+      {
+        "name" : "Account.BillingStreet",
+        "value" : "Gisala Platz 22"
+      },
+      {
+        "name" : "Account.ERP_DEBTOR_ID__c",
+        "value" : "87432"
+      },
+      {
+        "name" : "Account.Name",
+        "value" : "TestAccount2-SB-Mony"
+      },
+      {
+        "name" : "Contact.AccountId",
+        "value" : "87432"
+      },
+      {
+        "name" : "Contact.Academic_Title__c",
+        "value" : ""
+      },
+      {
+        "name" : "Contact.ERP_Contact_ID__c",
+        "value" : "8534213"
+      },
+      {
+        "name" : "Contact.Email",
+        "value" : "lyna.phu@apsara-consulting.com"
+      },
+      {
+        "name" : "Contact.Fax",
+        "value" : "+491520399997"
+      },
+      {
+        "name" : "Contact.FirstName",
+        "value" : "BeforeMapping"
+      },
+      {
+        "name" : "Contact.LastName",
+        "value" : "Oliver"
+      },
+      {
+        "name" : "Contact.Salutation",
+        "value" : "Mr."
+      },
+      {
+        "name" : "Contact.Title",
+        "value" : "Doctor"
+      }
+    ]
+  }
+]

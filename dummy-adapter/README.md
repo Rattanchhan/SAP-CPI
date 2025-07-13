@@ -1,0 +1,1 @@
+Current adapter is used for experiments only

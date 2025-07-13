@@ -1,0 +1,7 @@
+#Properties file
+#Tue Apr 27 11:44:50 MSK 2021
+Adapter-Name=DummyAdapter
+Enable-Maven=true
+Adapter-Vendor=ApsaraConsulting
+Adapter-ID=DummyAdapter
+Adapter-Version=1.0.0

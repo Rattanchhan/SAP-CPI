@@ -1,0 +1,66 @@
+[
+  {
+    "oneRecord" : [
+      {
+        "name" : "Account.Name",
+        "value" : "V2 Custom Class One GmbH"
+      },
+      {
+        "name" : "Account.ERP_DEBTOR_ID__c",
+        "value" : "0000401557"
+      },
+      {
+        "name" : "Account.BillingCity",
+        "value" : "Ismaning"
+      },
+      {
+        "name" : "Account.BillingCountry",
+        "value" : "DE"
+      },
+      {
+        "name" : "Account.BillingPostalCode",
+        "value" : "82140"
+      },
+      {
+        "name" : "Account.BillingState",
+        "value" : "Bavaria"
+      },
+      {
+        "name" : "Account.BillingStreet",
+        "value" : "Promeade Strasse 24"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "Account.Name",
+        "value" : "V2 Custom Class Two GmbH"
+      },
+      {
+        "name" : "Account.ERP_DEBTOR_ID__c",
+        "value" : "0000401558"
+      },
+      {
+        "name" : "Account.BillingCity",
+        "value" : "Stuttgart"
+      },
+      {
+        "name" : "Account.BillingCountry",
+        "value" : "DE"
+      },
+      {
+        "name" : "Account.BillingPostalCode",
+        "value" : "82140"
+      },
+      {
+        "name" : "Account.BillingState",
+        "value" : "Bavaria"
+      },
+      {
+        "name" : "Account.BillingStreet",
+        "value" : "Augustiner Platz 14"
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:ISTRUCTURE_Account
+  xmlns:ns1="http://soap.sforce.com/schemas/class/skyvvasolutions/IServices">
+  <fromSystem>Ly-Na</fromSystem>
+  <targetObject>Ticket_12470_V2Account_IN</targetObject>
+  <ListOfAccounts>
+    <Account>
+      <Name>V2 Custom Class One GmbH</Name>
+      <ERP_DEBTOR_ID__c>0000401557</ERP_DEBTOR_ID__c>
+      <BillingCity>Ismaning</BillingCity>
+      <BillingCountry>DE</BillingCountry>
+      <BillingPostalCode>82140</BillingPostalCode>
+      <BillingState>Bavaria</BillingState>
+      <BillingStreet>Promeade Strasse 24</BillingStreet>
+    </Account>
+    <Account>
+      <Name>V2 Custom Class Two GmbH</Name>
+      <ERP_DEBTOR_ID__c>0000401558</ERP_DEBTOR_ID__c>
+      <BillingCity>Stuttgart</BillingCity>
+      <BillingCountry>DE</BillingCountry>
+      <BillingPostalCode>82140</BillingPostalCode>
+      <BillingState>Bavaria</BillingState>
+      <BillingStreet>Augustiner Platz 14</BillingStreet>
+    </Account>
+  </ListOfAccounts>
+</ns1:ISTRUCTURE_Account>
+

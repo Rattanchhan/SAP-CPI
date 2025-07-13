@@ -1,0 +1,5 @@
+salesforce.client.id=
+salesforce.client.secret=
+salesforce.username=
+salesforce.password=
+salesforce.login.url=https://test.salesforce.com

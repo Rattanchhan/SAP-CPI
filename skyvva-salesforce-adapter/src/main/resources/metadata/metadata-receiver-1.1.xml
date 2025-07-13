@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentMetadata ComponentId="ctype::Adapter/cname::SkyvvaSalesforce/vendor::testing.com/version::1.1.2"
+                   ComponentName="SkyvvaSalesforce" UIElementType="Adapter" IsExtension="false" IsFinal="true"
+                   IsPreserves="true" IsDefaultGenerator="true" ComponentDisplayName="SkyvvaSalesforce"
+                   xmlns:gen="http://www.sap.hci.adk.com/gen" xmlns:bp="http://www.adk.gen/xmlns/blueprint">
+  <Variant VariantName="Salesforce Component Receiver"
+           VariantId="ctype::AdapterVariant/cname::SkyvvaSalesforce/vendor::testing.com/tp::https/mp::skyvva/direction::Receiver/version::1.1.2"
+           IsRequestResponse="true" MetadataVersion="2.0" gen:RuntimeComponentBaseUri="skyvva-salesforce"
+           AttachmentBehavior="Preserve">
+    <InputContent Cardinality="1" Scope="outsidepool" MessageCardinality="1" isStreaming="false">
+      <Content>
+        <ContentType>Any</ContentType>
+        <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></Schema>
+      </Content>
+    </InputContent>
+    <OutputContent Cardinality="1" Scope="outsidepool" MessageCardinality="1" isStreaming="false">
+      <Content>
+        <ContentType>Any</ContentType>
+        <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></Schema>
+      </Content>
+    </OutputContent>
+    <Tab id="connection">
+      <GuiLabels>
+        <Label language="EN">Connection</Label>
+        <Label language="DE">Connection</Label>
+      </GuiLabels>
+      <AttributeGroup id="LoginDetails">
+        <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LoginDetails
+        </Name>
+        <GuiLabels>
+          <Label language="EN">Login-Config</Label>
+          <Label language="DE">Login-Config</Label>
+        </GuiLabels>
+        <AttributeReference>
+          <ReferenceName>loginUrl</ReferenceName>
+          <description>Configure Login Url</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>userCredential</ReferenceName>
+          <description>Configure User Credential</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>clientCredential</ReferenceName>
+          <description>Configure OAuth Client Credential</description>
+        </AttributeReference>
+      </AttributeGroup>
+    </Tab>
+    <Tab id="SalesForce">
+      <GuiLabels guid="906cd8d3-a91e-472c-9d58-aa4d3c6b2109">
+        <Label language="EN">Skyvva</Label>
+        <Label language="DE">Skyvva</Label>
+      </GuiLabels>
+      <AttributeGroup id="defaultUriParameter">
+        <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Request Settings
+        </Name>
+        <GuiLabels guid="50556f6c-6429-4282-a4ed-255e085d1a2b">
+          <Label language="EN">Request Settings</Label>
+          <Label language="DE">Request Settings</Label>
+        </GuiLabels>
+        <AttributeReference>
+          <ReferenceName>skyvvaApiVersion</ReferenceName>
+          <description>Select Skyvva API version</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>apexUrl</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V2</AttributeValue>
+          </EditCondition>
+          <description>Configure Skyvva API</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>apexMethod</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V2</AttributeValue>
+          </EditCondition>
+          <description>Configure Apex Method</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>salesforceIntegration</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V3</AttributeValue>
+          </EditCondition>
+          <description>Configure Integration</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>salesforceInterface</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V3</AttributeValue>
+          </EditCondition>
+          <description>Configure Interface</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>skyvvaIntegrationMode</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V3</AttributeValue>
+          </EditCondition>
+          <description>Select mode</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>requestFormat</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V3</AttributeValue>
+          </EditCondition>
+          <description>Select request format</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>responseFormat</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V3</AttributeValue>
+          </EditCondition>
+          <description>Select response format</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>skyvvaAppVersion</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V3</AttributeValue>
+          </EditCondition>
+          <description>Configure Skyvva App version</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>apiVersion</ReferenceName>
+          <EditCondition>
+            <AttributeName>skyvvaApiVersion</AttributeName>
+            <AttributeValue>V3</AttributeValue>
+          </EditCondition>
+          <description>Configure Salesforce API version</description>
+        </AttributeReference>
+      </AttributeGroup>
+      <AttributeGroup id="AdapterSettings">
+        <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Adapter settings
+        </Name>
+        <GuiLabels guid="e28740bb-2e31-4a6a-991e-45d35c26437e">
+          <Label language="EN">Adapter Settings</Label>
+          <Label language="DE">Adapter Settings</Label>
+        </GuiLabels>
+        <AttributeReference>
+          <ReferenceName>loggingOption</ReferenceName>
+          <description>Configure logging level</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>enableRetry</ReferenceName>
+          <description>Enable retry for connectivity errors</description>
+        </AttributeReference>
+        <AttributeReference>
+          <ReferenceName>httpClientTimeout</ReferenceName>
+          <description>Configure Http Client Timeout</description>
+        </AttributeReference>
+      </AttributeGroup>
+    </Tab>
+  </Variant>
+  <AttributeMetadata>
+    <Name>skyvvaApiVersion</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>V2</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="a2e64522-0ef5-497f-aafe-2fb1be76d655">
+      <Label language="EN">Skyvva API Version</Label>
+      <Label language="DE">Skyvva API Version</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>V2</Value>
+        <GuiLabels guid="a2e64522-0ef5-497f-0afe-2fb1be76d655">
+          <Label language="EN">V2</Label>
+          <Label language="DE">V2</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>V3</Value>
+        <GuiLabels guid="a2e64522-0ef5-497f-1afe-2fb1be76d655">
+          <Label language="EN">V3</Label>
+          <Label language="DE">V3</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>salesforceIntegration</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="4c8ec568-3846-4486-aeb9-92e65e281d18">
+      <Label language="EN">Integration</Label>
+      <Label language="DE">Integration</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>salesforceInterface</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="4c8ec568-3846-4486-aeb9-92e65e281d18">
+      <Label language="EN">Interface</Label>
+      <Label language="DE">Interface</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>skyvvaIntegrationMode</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>SYNCHRONOUS</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="94ebaa14-539d-405f-897e-0406e2679c96">
+      <Label language="EN">Mode</Label>
+      <Label language="DE">Mode</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>ASYNCHRONOUS</Value>
+        <GuiLabels guid="f869b086-d731-46fb-a02d-17009904d276">
+          <Label language="EN">Asynchronous</Label>
+          <Label language="DE">Asynchronous</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SYNCHRONOUS</Value>
+        <GuiLabels guid="8ac32233-81d1-46bf-81e6-bd45664c7101">
+          <Label language="EN">Synchronous</Label>
+          <Label language="DE">Synchronous</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SKYVVA_BATCH</Value>
+        <GuiLabels guid="12a7e2f7-8579-432d-b543-382b076eed52">
+          <Label language="EN">Skyvva Batch</Label>
+          <Label language="DE">Skyvva Batch</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SKYVVA_BULK</Value>
+        <GuiLabels guid="415d9818-c477-40d0-bcf1-9d6864b31970">
+          <Label language="EN">Skyvva Bulk</Label>
+          <Label language="DE">Skyvva Bulk</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>SALESFORCE_BULK</Value>
+        <GuiLabels guid="9d3ca90f-095e-4643-b624-be715415c14c">
+          <Label language="EN">Salesforce Bulk</Label>
+          <Label language="DE">Salesforce Bulk</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>AUTO_SWITCH</Value>
+        <GuiLabels guid="7ca78d3c-685c-4b99-ad50-556248a82250">
+          <Label language="EN">Auto-Switch</Label>
+          <Label language="DE">Auto-Switch</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>requestFormat</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>JSON</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="18f1c8de-1e62-4aca-b6b5-7a0df22964bd">
+      <Label language="EN">Request Format</Label>
+      <Label language="DE">Request Format</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>JSON</Value>
+        <GuiLabels guid="c01288f8-580a-4f87-85b3-803ce57c95dd">
+          <Label language="EN">JSON</Label>
+          <Label language="DE">JSON</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>XML</Value>
+        <GuiLabels guid="d8ae009e-98b8-4bd3-88b7-982d345d4ff9">
+          <Label language="EN">XML</Label>
+          <Label language="DE">XML</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>responseFormat</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>JSON</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="44f52b92-e97f-403a-ba05-9c8c60803a38">
+      <Label language="EN">Response Format</Label>
+      <Label language="DE">Response Format</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>JSON</Value>
+        <GuiLabels guid="e752989c-ec30-4eb2-b7fa-0d219c4264f2">
+          <Label language="EN">JSON</Label>
+          <Label language="DE">JSON</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>XML</Value>
+        <GuiLabels guid="1cd8c9a3-5da1-4fb4-82ea-eaca1c11e523">
+          <Label language="EN">XML</Label>
+          <Label language="DE">XML</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>skyvvaAppVersion</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>2.48.0</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="a2e64522-0ef5-497f-aafe-1fb1be76d65c">
+      <Label language="EN">Skyvva App Version</Label>
+      <Label language="DE">Skyvva App Version</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>apexUrl</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="200fc1ca-2986-4d77-8b8d-f094bc191caa">
+      <Label language="EN">Skyvva API</Label>
+      <Label language="DE">Skyvva API</Label>
+    </GuiLabels>
+    <FixedValues>
+      <isEditable>true</isEditable>
+      <FixedValue>
+        <Value>skyvvasolutions/integrate</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a6">
+          <Label language="EN">integrate</Label>
+          <Label language="DE">integrate</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/V4/integrate</Value>
+        <GuiLabels guid="4ea48355-06ff-4613-a02a-a6f0bec0aee9">
+          <Label language="EN">V4/integrate</Label>
+          <Label language="DE">V4/integrate</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/integrateSynchronous</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a7">
+          <Label language="EN">integrateSynchronous</Label>
+          <Label language="DE">integrateSynchronous</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/V4/integrateSynchronous</Value>
+        <GuiLabels guid="2ce4179b-a008-42d6-ac62-88e59d8db368">
+          <Label language="EN">V4/integrateSynchronous</Label>
+          <Label language="DE">V4/integrateSynchronous</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/integrateBatch</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a8">
+          <Label language="EN">integrateBatch</Label>
+          <Label language="DE">integrateBatch</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/V4/integrateBatch</Value>
+        <GuiLabels guid="587b1beb-20c9-4549-a11b-617e4c4a9e77">
+          <Label language="EN">V4/integrateBatch</Label>
+          <Label language="DE">V4/integrateBatch</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>skyvvasolutions/searchService</Value>
+        <GuiLabels guid="2f93da19-a9d1-479b-a27d-89c274fef7a9">
+          <Label language="EN">searchService</Label>
+          <Label language="DE">searchService</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>apexMethod</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>POST</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="989a0e67-fadc-4785-b39e-951a27ff0711">
+      <Label language="EN">Apex Method</Label>
+      <Label language="DE">Apex Method</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>GET</Value>
+        <GuiLabels>
+          <Label language="EN">GET</Label>
+          <Label language="DE">GET</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>POST</Value>
+        <GuiLabels>
+          <Label language="EN">POST</Label>
+          <Label language="DE">POST</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>PUT</Value>
+        <GuiLabels>
+          <Label language="EN">PUT</Label>
+          <Label language="DE">PUT</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>PATCH</Value>
+        <GuiLabels>
+          <Label language="EN">PATCH</Label>
+          <Label language="DE">PATCH</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>DELETE</Value>
+        <GuiLabels>
+          <Label language="EN">DELETE</Label>
+          <Label language="DE">DELETE</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>loggingOption</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>None</Default>
+    <Length></Length>
+    <isparameterized>false</isparameterized>
+    <GuiLabels guid="2e3d28e5-af2d-4730-bfb6-198a42f60c3b">
+      <Label language="EN">Logging option</Label>
+      <Label language="DE">Logging option</Label>
+    </GuiLabels>
+    <FixedValues>
+      <FixedValue>
+        <Value>None</Value>
+        <GuiLabels guid="8fb19dc9-01af-45c8-8de8-594c6a5971b3">
+          <Label language="EN">Default</Label>
+          <Label language="DE">Default</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Trace</Value>
+        <GuiLabels guid="80d813eb-9c73-4c2d-a07c-f3c6216a3eba">
+          <Label language="EN">Trace level</Label>
+          <Label language="DE">Trace level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Debug</Value>
+        <GuiLabels guid="fc09960c-8264-409d-8a0b-44fe2b03ca25">
+          <Label language="EN">Debug level</Label>
+          <Label language="DE">Debug level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Info</Value>
+        <GuiLabels guid="5f20106b-dde5-47c1-8dee-e664a2eb6e3a">
+          <Label language="EN">Info level</Label>
+          <Label language="DE">Info level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Warning</Value>
+        <GuiLabels guid="1753676e-8d56-4b19-9a6c-a8c5635ef3ac">
+          <Label language="EN">Warning level</Label>
+          <Label language="DE">Warning level</Label>
+        </GuiLabels>
+      </FixedValue>
+      <FixedValue>
+        <Value>Error</Value>
+        <GuiLabels guid="d99d0a42-8592-47dc-8df8-a4417129c5e4">
+          <Label language="EN">Error level</Label>
+          <Label language="DE">Error level</Label>
+        </GuiLabels>
+      </FixedValue>
+    </FixedValues>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>enableRetry</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:boolean</DataType>
+    <Default>false</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="f3d006c7-8553-4949-84dd-6288da5fa888">
+      <Label language="EN">Enable retry for fatal connectivity errors</Label>
+      <Label language="DE">Enable retry for fatal connectivity errors</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>httpClientTimeout</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>60</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="3726c0ae-c257-4f3e-bf68-d04cd5487bfc">
+      <Label language="EN">HTTP client timeout (sec)</Label>
+      <Label language="DE">HTTP client timeout (sec)</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>apiVersion</Name>
+    <Usage>false</Usage>
+    <DataType>xsd:string</DataType>
+    <Default>53.0</Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="dac45c8d-0253-484f-bb70-2d0101ef9c1f">
+      <Label language="EN">Salesforce Api Version</Label>
+      <Label language="DE">Salesforce Api Version</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>userCredential</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <!-- <AttributeBehavior>SecureAlias</AttributeBehavior> -->
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="ecdcc7cc-1424-4c79-9745-4f0d2af5c088">
+      <Label language="EN">User Credential</Label>
+      <Label language="DE">User Credential</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>clientCredential</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <!-- <AttributeBehavior>SecureAlias</AttributeBehavior> -->
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="7f0872e8-099b-4654-8004-46cf28456d8a">
+      <Label language="EN">Client Credential</Label>
+      <Label language="DE">Client Credential</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+  <AttributeMetadata>
+    <Name>loginUrl</Name>
+    <Usage>true</Usage>
+    <DataType>xsd:string</DataType>
+    <Default></Default>
+    <Length></Length>
+    <isparameterized>true</isparameterized>
+    <GuiLabels guid="b365d933-6d63-41e1-b16e-4bdd3e518b0c">
+      <Label language="EN">Login Url</Label>
+      <Label language="DE">Login Url</Label>
+    </GuiLabels>
+  </AttributeMetadata>
+</ComponentMetadata>

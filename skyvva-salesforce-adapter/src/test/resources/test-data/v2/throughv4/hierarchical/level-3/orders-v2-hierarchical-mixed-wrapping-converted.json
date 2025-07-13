@@ -1,0 +1,962 @@
+[
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-03-10"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-02-12"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "2"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "020"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-020"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-01-13"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "3"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "030"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-030"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-01-14"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "-4"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "040"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-040"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000020"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "20"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000020"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "200.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "2"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS221_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000020"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "200.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-03-21"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000020-010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000020"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-03-10"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-02-12"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "2"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "020"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-020"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-01-13"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "3"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "030"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-030"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "10"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS215_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000010"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "100.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-01-14"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "-4"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "040"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000010-040"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000010"
+      }
+    ]
+  },
+  {
+    "oneRecord" : [
+      {
+        "name" : "SalesOrderHeader__c.CurrencyISOCode__c",
+        "value" : "EUR"
+      },
+      {
+        "name" : "SalesOrderHeader__c.ERP_SalesOrder_ID__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.Name",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PO_Nr__c",
+        "value" : "CPI PO-1222"
+      },
+      {
+        "name" : "SalesOrderHeader__c.PoDate__c",
+        "value" : "2022-12-13"
+      },
+      {
+        "name" : "SalesOrderHeader__c.SAP_CU_Subtotal__c",
+        "value" : "350.57"
+      },
+      {
+        "name" : "SalesOrderItem__c.ERP_SalesOrderItem_ID__c",
+        "value" : "0000013393-000020"
+      },
+      {
+        "name" : "SalesOrderItem__c.Item_Quantity__c",
+        "value" : "20"
+      },
+      {
+        "name" : "SalesOrderItem__c.Name",
+        "value" : "000020"
+      },
+      {
+        "name" : "SalesOrderItem__c.Net_Amount__c",
+        "value" : "200.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Price_Unit__c",
+        "value" : "2"
+      },
+      {
+        "name" : "SalesOrderItem__c.Product2__c",
+        "value" : "T-AS221_1000"
+      },
+      {
+        "name" : "SalesOrderItem__c.SAP_Order_Position__c",
+        "value" : "000020"
+      },
+      {
+        "name" : "SalesOrderItem__c.ShippingPoint__c",
+        "value" : "DE3999"
+      },
+      {
+        "name" : "SalesOrderItem__c.Unit_Price__c",
+        "value" : "200.99"
+      },
+      {
+        "name" : "SalesOrderItem__c.Units__c",
+        "value" : "PCS"
+      },
+      {
+        "name" : "SalesOrderItem__c.Warehouse_Location__c",
+        "value" : "X1 Dresden /23"
+      },
+      {
+        "name" : "SalesOrderItem__c.SalesOrderHeader__c",
+        "value" : "0000013393"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Delivery_Date__c",
+        "value" : "2022-03-21"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Confirmed_Quantity__c",
+        "value" : "1"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.Name",
+        "value" : "010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SAP_Ext_ID__c",
+        "value" : "0000013393-000020-010"
+      },
+      {
+        "name" : "SalesOrderScheduleLine__c.SalesOrderItem__c",
+        "value" : "0000013393-000020"
+      }
+    ]
+  }
+]

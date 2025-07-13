@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-Description: Camel Salesforce support
+Bundle-DocURL: http://www.apache.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: camel-salesforce
+Bundle-SymbolicName: org.apache.camel.camel-salesforce
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 3.14.7

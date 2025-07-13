@@ -1,0 +1,43 @@
+<MyAccount>
+  <AccountID__c>ACC-2139014</AccountID__c>
+  <BillingCity>PhnomPenh2</BillingCity>
+  <BillingCountry>DE</BillingCountry>
+  <BillingPostalCode>82134</BillingPostalCode>
+  <BillingState>Bavaria</BillingState>
+  <BillingStreet>Gisala Platz 22</BillingStreet>
+  <ERP_DEBTOR_ID__c>87431</ERP_DEBTOR_ID__c>
+  <Name>TestAccount2-SB-Mony</Name>
+  <MyContact>
+    <Academic_Title__c/>
+    <ERP_Contact_ID__c>8534213</ERP_Contact_ID__c>
+    <email>lyna.phu@apsara-consulting.com</email>
+    <Fax>+491520399997</Fax>
+    <FirstName>BeforeMapping</FirstName>
+    <LastName>Oliver</LastName>
+    <Name>BeforeMapping Oliver</Name>
+    <Salutation>Mr.</Salutation>
+    <Title>Doctor</Title>
+  </MyContact>
+  <MyContact>
+    <Academic_Title__c/>
+    <ERP_Contact_ID__c>8534213</ERP_Contact_ID__c>
+    <email>lyna.phu@apsara-consulting.com</email>
+    <Fax>+491520399997</Fax>
+    <FirstName>BeforeMapping</FirstName>
+    <LastName>Oliver</LastName>
+    <Name>BeforeMapping Oliver</Name>
+    <Salutation>Mr.</Salutation>
+    <Title>Doctor</Title>
+  </MyContact>
+  <MyContact>
+    <Academic_Title__c/>
+    <ERP_Contact_ID__c>8534213</ERP_Contact_ID__c>
+    <email>lyna.phu@apsara-consulting.com</email>
+    <Fax>+491520399997</Fax>
+    <FirstName>BeforeMapping</FirstName>
+    <LastName>Oliver</LastName>
+    <Name>BeforeMapping Oliver</Name>
+    <Salutation>Mr.</Salutation>
+    <Title>Doctor</Title>
+  </MyContact>
+</MyAccount>

@@ -295,6 +295,18 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
+        <plugin>
+          <groupId>org.apache.karaf.tooling</groupId>
+          <artifactId>karaf-maven-plugin</artifactId>
+          <version>4.3.10</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>karaf:install</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>

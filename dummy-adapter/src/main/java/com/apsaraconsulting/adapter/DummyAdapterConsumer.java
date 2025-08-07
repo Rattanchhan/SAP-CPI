@@ -18,28 +18,27 @@ public class DummyAdapterConsumer extends ScheduledPollConsumer {
     public DummyAdapterConsumer(DummyAdapterEndpoint endpoint, Processor processor) {
         super(endpoint, processor);
 
-        // Set the polling delay from endpoint configuration
+        /// Set the polling delay from endpoint configuration
         setDelay(endpoint.getDelay());
     }
 
     @Override
     protected int poll() throws Exception {
-        DummyAdapterEndpoint endpoint = (DummyAdapterEndpoint) getEndpoint();
-
+        DummyAdapterEndpoint endpoint = getEndpoint();
         counter++;
 
-        // Create the dummy adapter message
+        /// Create the dummy adapter message
         String message = String.format("%s %s! (Message #%d)",
             endpoint.getGreeting(),
             endpoint.getName() != null ? endpoint.getName() : "DummyAdapter",
             counter);
 
-        // Apply uppercase if configured
+        /// Apply uppercase if configured
         if (endpoint.isUppercase()) {
             message = message.toUpperCase();
         }
 
-        // Create exchange and set message
+        /// Create exchange and set message
         Exchange exchange = createExchange(false);
         exchange.getIn().setBody(message);
         exchange.getIn().setHeader("messageNumber", counter);
@@ -49,13 +48,13 @@ public class DummyAdapterConsumer extends ScheduledPollConsumer {
         LOG.info("Generated dummy adapter message: {}", message);
 
         try {
-            // Process the exchange
+            /// Process the exchange
             getProcessor().process(exchange);
-            return 1; // Indicate that 1 message was processed
+            return 1; /// Indicate that 1 message was processed
         } catch (Exception e) {
             LOG.error("Error processing dummy adapter message", e);
             exchange.setException(e);
-            return 0; // Indicate no messages were processed due to error
+            return 0; /// Indicate no messages were processed due to error
         }
     }
 

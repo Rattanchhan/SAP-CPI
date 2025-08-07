@@ -1,8 +1,11 @@
 package com.apsaraconsulting.adapter;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
 import org.apache.camel.Producer;
+import org.apache.camel.spi.Metadata;
 import org.apache.camel.spi.UriEndpoint;
 import org.apache.camel.spi.UriParam;
 import org.apache.camel.spi.UriPath;
@@ -11,21 +14,54 @@ import org.apache.camel.support.DefaultEndpoint;
 /**
  * Dummy Adapter Camel Endpoint
  */
+@Setter
+@Getter
 @UriEndpoint(firstVersion = "1.0.0", scheme = "dummy-adapter", title = "Dummy Adapter",
     syntax = "dummy-adapter:name", producerOnly = false, consumerOnly = false)
 public class DummyAdapterEndpoint extends DefaultEndpoint {
 
+    /// Getters and Setters
     @UriPath
     private String name;
 
+    @UriParam
+    private String httpMethod;
+
+    @UriParam
+    private String url;
+
+    @UriParam
+    private String username;
+
+    @UriParam
+    private String password;
+
+    @UriParam
+    private String clientId;
+
+    @UriParam
+    private String clientSecret;
+
+    @UriParam
+    private String targetSystem;
+
+    @UriParam
+    private String tokenEndpoint;
+
+    @UriParam
+    private String salesforceAuth;
+
+    @UriParam
+    private String wiremockAuth;
+
     @UriParam(defaultValue = "Hello")
-    private String greeting = "Hello";
+    private String greeting;
 
     @UriParam(defaultValue = "false")
-    private boolean uppercase = false;
+    private boolean uppercase;
 
     @UriParam(defaultValue = "1000")
-    private long delay = 1000;
+    private long delay ;
 
     public DummyAdapterEndpoint(String uri, DummyAdapterComponent component) {
         super(uri, component);
@@ -48,36 +84,4 @@ public class DummyAdapterEndpoint extends DefaultEndpoint {
         return true;
     }
 
-    // Getters and Setters
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGreeting() {
-        return greeting;
-    }
-
-    public void setGreeting(String greeting) {
-        this.greeting = greeting;
-    }
-
-    public boolean isUppercase() {
-        return uppercase;
-    }
-
-    public void setUppercase(boolean uppercase) {
-        this.uppercase = uppercase;
-    }
-
-    public long getDelay() {
-        return delay;
-    }
-
-    public void setDelay(long delay) {
-        this.delay = delay;
-    }
 }

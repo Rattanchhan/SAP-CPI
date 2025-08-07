@@ -96,64 +96,226 @@
     <Variant VariantName="Sample Component Receiver" VariantId="ctype::AdapterVariant/cname::DummyAdapter/vendor::ApsaraConsulting/tp::dummy-adapter/mp::dummy-adapter/direction::Receiver" IsRequestResponse="true" MetadataVersion="2.0" gen:RuntimeComponentBaseUri="dummy-adapter" AttachmentBehavior="Preserve">
         <InputContent Cardinality="1" Scope="outsidepool" MessageCardinality="1" isStreaming="false">
             <Content>
-                <ContentType>Any</ContentType>
-                <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></Schema>
+              <ContentType>Any</ContentType>
+              <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </Content>
         </InputContent>
         <OutputContent Cardinality="1" Scope="outsidepool" MessageCardinality="1" isStreaming="false">
             <Content>
-                <ContentType>Any</ContentType>
-                <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></Schema>
+              <ContentType>Any</ContentType>
+              <Schema xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </Content>
         </OutputContent>
-        <Tab id="connection">
-            <GuiLabels guid="484b8319-7d64-49f9-bef9-d47a419b6446">
-                <Label language="EN">Connection</Label>
-                <Label language="DE">Connection</Label>
+        <Tab id="target-system">
+          <GuiLabels guid="aabbccdd-eeff-1122-3344-556677889900">
+            <Label language="EN">Target Configuration</Label>
+            <Label language="DE">Target Konfiguration</Label>
+          </GuiLabels>
+          <AttributeGroup id="targetSystemSettings">
+            <Name>Target System Settings</Name>
+            <GuiLabels guid="99887766-5544-3322-1100-aabbccddeeff">
+              <Label language="EN">Target System Settings</Label>
+              <Label language="DE">Target System Einstellungen</Label>
             </GuiLabels>
-            <AttributeGroup id="defaultUriParameter">
-                <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">URI Setting</Name>
-                <GuiLabels guid="55e2764d-9161-43a1-ad8d-28f198d3fdf1">
-                    <Label language="EN">URI Setting</Label>
-                    <Label language="DE">URI Setting</Label>
-                </GuiLabels>
-                <AttributeReference>
-                    <ReferenceName>firstUriPart</ReferenceName>
-                    <description>Configure First URI Part</description>
-                </AttributeReference>
-            </AttributeGroup>
-            <AttributeGroup id="MessageDetails">
-                <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Test19 Endpoint</Name>
-                <GuiLabels guid="d5f0f7b0-5463-4eae-af69-e7d13dabbc18">
-                    <Label language="EN">Message Details</Label>
-                    <Label language="DE">Message Details</Label>
-                </GuiLabels>
-                <AttributeReference>
-                    <ReferenceName>greetingsMessage</ReferenceName>
-                    <description>Configure Greetings Message</description>
-                </AttributeReference>
-            </AttributeGroup>
+            <AttributeReference>
+              <ReferenceName>targetSystem</ReferenceName>
+              <description>Please choose your target system...</description>
+            </AttributeReference>
 
-            <!-- Attribute Group for Required Parameters -->
-            <AttributeGroup id="requiredParameters">
-              <Name>Required Parameters</Name>
-              <GuiLabels guid="b2c3d4e5-f6g7-8901-a2b3-c4d5e6f78901">
-                <Label language="EN">Required Parameters</Label>
-                <Label language="DE">Erforderliche Parameter</Label>
-              </GuiLabels>
-              <AttributeReference>
-                <ReferenceName>name</ReferenceName>
-                <description>Unique identifier for the adapter instance</description>
-              </AttributeReference>
-            </AttributeGroup>
+            <!--Salesforce authentication type-->
+            <AttributeReference>
+              <ReferenceName>salesforceAuth</ReferenceName>
+              <EditCondition>
+                <AttributeName>targetSystem</AttributeName>
+                <AttributeValue>Salesforce</AttributeValue>
+              </EditCondition>
+            </AttributeReference>
+
+            <!--WireMock authentication type-->
+            <AttributeReference>
+              <ReferenceName>wiremockAuth</ReferenceName>
+              <EditCondition>
+                <AttributeName>targetSystem</AttributeName>
+                <AttributeValue>WireMock</AttributeValue>
+              </EditCondition>
+            </AttributeReference>
+            <AttributeReference>
+              <ReferenceName>httpMethod</ReferenceName>
+              <description>Please choose your http method (GET, POST, DELETE, UPDATE, PUT, HEAD, OPTION)</description>
+            </AttributeReference>
+            <AttributeReference>
+              <ReferenceName>url</ReferenceName>
+              <description>Please input your instance url (https://your-domain.com)</description>
+            </AttributeReference>
+            <AttributeReference>
+              <ReferenceName>tokenEndpoint</ReferenceName>
+              <description>Please input your token endpoint (https://your-domain.com/oauth2/token)</description>
+              <EditCondition>
+                <AttributeName>targetSystem</AttributeName>
+                <AttributeValue>Salesforce</AttributeValue>
+              </EditCondition>
+            </AttributeReference>
+            <!--Field for salesforce auth type password-->
+            <AttributeReference>
+              <ReferenceName>username</ReferenceName>
+              <OrCondition>
+                <AndCondition>
+                  <EditCondition>
+                    <AttributeName>targetSystem</AttributeName>
+                    <AttributeValue>Salesforce</AttributeValue>
+                  </EditCondition>
+                  <EditCondition>
+                    <AttributeName>salesforceAuth</AttributeName>
+                    <AttributeValue>password</AttributeValue>
+                  </EditCondition>
+                </AndCondition>
+                <AndCondition>
+                  <EditCondition>
+                    <AttributeName>targetSystem</AttributeName>
+                    <AttributeValue>WireMock</AttributeValue>
+                  </EditCondition>
+                  <EditCondition>
+                    <AttributeName>wiremockAuth</AttributeName>
+                    <AttributeValue>basic</AttributeValue>
+                  </EditCondition>
+                </AndCondition>
+              </OrCondition>
+            </AttributeReference>
+
+            <AttributeReference>
+              <ReferenceName>password</ReferenceName>
+                <OrCondition>
+                  <AndCondition>
+                    <EditCondition>
+                      <AttributeName>targetSystem</AttributeName>
+                      <AttributeValue>Salesforce</AttributeValue>
+                    </EditCondition>
+                    <EditCondition>
+                      <AttributeName>salesforceAuth</AttributeName>
+                      <AttributeValue>password</AttributeValue>
+                    </EditCondition>
+                  </AndCondition>
+                  <AndCondition>
+                    <EditCondition>
+                      <AttributeName>targetSystem</AttributeName>
+                      <AttributeValue>WireMock</AttributeValue>
+                    </EditCondition>
+                    <EditCondition>
+                      <AttributeName>wiremockAuth</AttributeName>
+                      <AttributeValue>basic</AttributeValue>
+                    </EditCondition>
+                  </AndCondition>
+                </OrCondition>
+            </AttributeReference>
+
+            <AttributeReference>
+              <ReferenceName>clientId</ReferenceName>
+              <AndCondition>
+                <EditCondition>
+                  <AttributeName>targetSystem</AttributeName>
+                  <AttributeValue>Salesforce</AttributeValue>
+                </EditCondition>
+                <OrCondition>
+                  <EditCondition>
+                    <AttributeName>salesforceAuth</AttributeName>
+                    <AttributeValue>password</AttributeValue>
+                  </EditCondition>
+                  <EditCondition>
+                    <AttributeName>salesforceAuth</AttributeName>
+                    <AttributeValue>client_credentials</AttributeValue>
+                  </EditCondition>
+                </OrCondition>
+              </AndCondition>
+            </AttributeReference>
+            <AttributeReference>
+              <ReferenceName>clientSecret</ReferenceName>
+              <AndCondition>
+                <EditCondition>
+                  <AttributeName>targetSystem</AttributeName>
+                  <AttributeValue>Salesforce</AttributeValue>
+                </EditCondition>
+                <OrCondition>
+                  <EditCondition>
+                    <AttributeName>salesforceAuth</AttributeName>
+                    <AttributeValue>password</AttributeValue>
+                  </EditCondition>
+                  <EditCondition>
+                    <AttributeName>salesforceAuth</AttributeName>
+                    <AttributeValue>client_credentials</AttributeValue>
+                  </EditCondition>
+                </OrCondition>
+              </AndCondition>
+            </AttributeReference>
+          </AttributeGroup>
+        </Tab>
+        <Tab id="connection">
+          <GuiLabels guid="484b8319-7d64-49f9-bef9-d47a419b6446">
+            <Label language="EN">Connection</Label>
+            <Label language="DE">Connection</Label>
+          </GuiLabels>
+          <AttributeGroup id="defaultUriParameter">
+            <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">URI Setting</Name>
+            <GuiLabels guid="55e2764d-9161-43a1-ad8d-28f198d3fdf1">
+              <Label language="EN">URI Setting</Label>
+              <Label language="DE">URI Setting</Label>
+            </GuiLabels>
+            <AttributeReference>
+              <ReferenceName>firstUriPart</ReferenceName>
+              <description>Configure First URI Part</description>
+            </AttributeReference>
+          </AttributeGroup>
+          <AttributeGroup id="MessageDetails">
+            <Name xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Test19 Endpoint</Name>
+            <GuiLabels guid="d5f0f7b0-5463-4eae-af69-e7d13dabbc18">
+              <Label language="EN">Message Details</Label>
+              <Label language="DE">Message Details</Label>
+            </GuiLabels>
+            <AttributeReference>
+              <ReferenceName>greetingsMessage</ReferenceName>
+              <description>Configure Greetings Message</description>
+            </AttributeReference>
+          </AttributeGroup>
+          <!-- Attribute Group for Required Parameters -->
+          <AttributeGroup id="requiredParameters">
+            <Name>Required Parameters</Name>
+            <GuiLabels guid="b2c3d4e5-f6g7-8901-a2b3-c4d5e6f78901">
+              <Label language="EN">Required Parameters</Label>
+              <Label language="DE">Erforderliche Parameter</Label>
+            </GuiLabels>
+            <AttributeReference>
+              <ReferenceName>name</ReferenceName>
+              <description>Unique identifier for the adapter instance</description>
+            </AttributeReference>
+          </AttributeGroup>
         </Tab>
     </Variant>
+
+    <AttributeMetadata>
+      <Name>username</Name>
+      <Usage>false</Usage>
+      <DataType>xsd:string</DataType>
+      <GuiLabels guid="33333333-aaaa-bbbb-cccc-444444444444">
+        <Label language="EN">Username</Label>
+        <Label language="DE">Benutzername</Label>
+      </GuiLabels>
+    </AttributeMetadata>
+
+    <AttributeMetadata>
+      <Name>password</Name>
+      <Usage>false</Usage>
+      <DataType>xsd:string</DataType>
+      <GuiLabels guid="55555555-aaaa-bbbb-cccc-666666666666">
+        <Label language="EN">Password</Label>
+        <Label language="DE">Passwort</Label>
+      </GuiLabels>
+    </AttributeMetadata>
+
     <AttributeMetadata>
         <Name>firstUriPart</Name>
         <Usage>false</Usage>
         <DataType>xsd:string</DataType>
-        <Default></Default>
-        <Length></Length>
         <isparameterized>true</isparameterized>
         <GuiLabels guid="876e40b9-c0a3-4d85-8b23-f1b509982b18">
             <Label language="EN">First URI Part</Label>
@@ -164,104 +326,19 @@
         <Name>greetingsMessage</Name>
         <Usage>false</Usage>
         <DataType>xsd:string</DataType>
-        <Default></Default>
-        <Length></Length>
         <isparameterized>true</isparameterized>
         <GuiLabels guid="239dd7c8-61ce-4ced-8037-437d688257f1">
             <Label language="EN">Greetings Message</Label>
             <Label language="DE">Greetings Message</Label>
         </GuiLabels>
     </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>backoffMultiplier</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:integer</DataType>
-        <Default></Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="83a4d6e8-1ec5-4693-a43a-30defc45dade">
-            <Label language="EN">Backoff Multiplier</Label>
-            <Label language="DE">Backoff Multiplier</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>sendEmptyMessageWhenIdle</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:boolean</DataType>
-        <Default></Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="eb3db3ca-fcfa-4a7a-95c3-a63b0b46b16e">
-            <Label language="EN">Send Empty Message When Idle</Label>
-            <Label language="DE">Send Empty Message When Idle</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>initialDelay</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:long</DataType>
-        <Default>1000</Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="a00ea23c-4fdc-4976-b4ea-8e12688bc556">
-            <Label language="EN">Initial Delay</Label>
-            <Label language="DE">Initial Delay</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>backoffIdleThreshold</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:integer</DataType>
-        <Default></Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="690620ff-b304-40f2-a68f-f8017092dccf">
-            <Label language="EN">Backoff Idle Threshold</Label>
-            <Label language="DE">Backoff Idle Threshold</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>useFixedDelay</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:boolean</DataType>
-        <Default>true</Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="e9988885-6de5-43ee-88bd-032876a851a3">
-            <Label language="EN">Use Fixed Delay</Label>
-            <Label language="DE">Use Fixed Delay</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>delay</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:long</DataType>
-        <Default>500</Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="a4f8a61b-7035-48e5-9ca8-6d2351620510">
-            <Label language="EN">Delay</Label>
-            <Label language="DE">Delay</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>startScheduler</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:boolean</DataType>
-        <Default>true</Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="ccfe4f40-8bfc-4037-a83a-5ee7ba27729e">
-            <Label language="EN">Start Scheduler</Label>
-            <Label language="DE">Start Scheduler</Label>
-        </GuiLabels>
-    </AttributeMetadata>
+
+    <!-- LoggingLevel configuration-->
     <AttributeMetadata>
         <Name>runLoggingLevel</Name>
         <Usage>false</Usage>
         <DataType>xsd:string</DataType>
         <Default>TRACE</Default>
-        <Length></Length>
         <isparameterized>false</isparameterized>
         <GuiLabels guid="421138a8-41c6-414b-b3e9-c0c06fbea859">
             <Label language="EN">Run Logging Level</Label>
@@ -312,94 +389,8 @@
             </FixedValue>
         </FixedValues>
     </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>backoffErrorThreshold</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:integer</DataType>
-        <Default></Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="fafb52c3-28c6-41c7-8e08-e21d885ba870">
-            <Label language="EN">Backoff Error Threshold</Label>
-            <Label language="DE">Backoff Error Threshold</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>greedy</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:boolean</DataType>
-        <Default></Default>
-        <Length></Length>
-        <isparameterized>true</isparameterized>
-        <GuiLabels guid="ebe1a5b6-e0dc-4092-acba-ed54e6dc909d">
-            <Label language="EN">Greedy</Label>
-            <Label language="DE">Greedy</Label>
-        </GuiLabels>
-    </AttributeMetadata>
-    <AttributeMetadata>
-        <Name>timeUnit</Name>
-        <Usage>false</Usage>
-        <DataType>xsd:string</DataType>
-        <Default>MILLISECONDS</Default>
-        <Length></Length>
-        <isparameterized>false</isparameterized>
-        <GuiLabels guid="56d0b719-f641-41f8-9ed8-f44fd30e1edc">
-            <Label language="EN">Time Unit</Label>
-            <Label language="DE">Time Unit</Label>
-        </GuiLabels>
-        <FixedValues>
-            <FixedValue>
-                <Value>MILLISECONDS</Value>
-                <GuiLabels guid="b8796b47-0a17-4c9f-8142-e07b5355c18d">
-                    <Label language="EN">MILLISECONDS</Label>
-                    <Label language="DE">MILLISECONDS</Label>
-                </GuiLabels>
-            </FixedValue>
-            <FixedValue>
-                <Value>MICROSECONDS</Value>
-                <GuiLabels guid="c527d83b-acb1-4f99-ae3f-04d8619b31c6">
-                    <Label language="EN">MICROSECONDS</Label>
-                    <Label language="DE">MICROSECONDS</Label>
-                </GuiLabels>
-            </FixedValue>
-            <FixedValue>
-                <Value>SECONDS</Value>
-                <GuiLabels guid="849be036-c140-4333-8260-1daf04b7a838">
-                    <Label language="EN">SECONDS</Label>
-                    <Label language="DE">SECONDS</Label>
-                </GuiLabels>
-            </FixedValue>
-            <FixedValue>
-                <Value>DAYS</Value>
-                <GuiLabels guid="4ad6e227-ffa7-494e-9edd-9940dfa2f54b">
-                    <Label language="EN">DAYS</Label>
-                    <Label language="DE">DAYS</Label>
-                </GuiLabels>
-            </FixedValue>
-            <FixedValue>
-                <Value>NANOSECONDS</Value>
-                <GuiLabels guid="36781d55-2554-4818-b87c-c9fe0cb540f1">
-                    <Label language="EN">NANOSECONDS</Label>
-                    <Label language="DE">NANOSECONDS</Label>
-                </GuiLabels>
-            </FixedValue>
-            <FixedValue>
-                <Value>HOURS</Value>
-                <GuiLabels guid="6cedc173-9ef7-4018-86be-e900fa168d87">
-                    <Label language="EN">HOURS</Label>
-                    <Label language="DE">HOURS</Label>
-                </GuiLabels>
-            </FixedValue>
-            <FixedValue>
-                <Value>MINUTES</Value>
-                <GuiLabels guid="47829f7e-3ae7-4212-b085-97b2bf9dee51">
-                    <Label language="EN">MINUTES</Label>
-                    <Label language="DE">MINUTES</Label>
-                </GuiLabels>
-            </FixedValue>
-        </FixedValues>
-    </AttributeMetadata>
-  <!-- Corrected name attribute using AttributeMetadata with Required flag -->
+
+    <!-- Corrected name attribute using AttributeMetadata with Required flag -->
     <AttributeMetadata>
       <Name>name</Name>
       <Usage>true</Usage>
@@ -410,4 +401,183 @@
         <Label language="DE">Name</Label>
       </GuiLabels>
     </AttributeMetadata>
+
+    <!-- Add a selector attribute -->
+    <AttributeMetadata>
+      <Name>targetSystem</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <Default>WireMock</Default>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="target-system-guid">
+        <Label language="EN">Target System</Label>
+      </GuiLabels>
+      <FixedValues>
+        <FixedValue>
+          <Value>WireMock</Value>
+          <GuiLabels guid="352deeac-432f-45d1-927e-781c5c0289f8">
+            <Label language="EN">WireMock</Label>
+            <Label language="DE">WireMock</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>Salesforce</Value>
+          <GuiLabels guid="39ad97f5-1d83-4ff5-a8cf-bdf80ef09bbc">
+            <Label language="EN">Salesforce</Label>
+            <Label language="DE">Salesforce</Label>
+          </GuiLabels>
+        </FixedValue>
+      </FixedValues>
+    </AttributeMetadata>
+
+    <!--  Add Salesforce-specific attributes-->
+    <AttributeMetadata>
+      <Name>salesforceAuth</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <Default>password</Default>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="auth-method-guid">
+        <Label language="EN">Authentication</Label>
+      </GuiLabels>
+      <FixedValues>
+        <FixedValue>
+          <Value>password</Value>
+          <GuiLabels guid="352deeac-432f-45d1-927e-781c5c0289f8">
+            <Label language="EN">Password Credentials</Label>
+            <Label language="DE">Password Credentials</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>client_credentials</Value>
+          <GuiLabels guid="39ad97f5-1d83-4ff5-a8cf-bdf80ef09bbc">
+            <Label language="EN">Client Credentials</Label>
+            <Label language="DE">Client Credentials</Label>
+          </GuiLabels>
+        </FixedValue>
+      </FixedValues>
+    </AttributeMetadata>
+
+    <AttributeMetadata>
+      <Name>wiremockAuth</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <Default>basic</Default>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="auth-method-guid">
+        <Label language="EN">Authentication</Label>
+      </GuiLabels>
+      <FixedValues>
+        <FixedValue>
+          <Value>basic</Value>
+          <GuiLabels guid="352deeac-432f-45d1-927e-781c5c0289f8">
+            <Label language="EN">Basic</Label>
+            <Label language="DE">Basic</Label>
+          </GuiLabels>
+        </FixedValue>
+      </FixedValues>
+    </AttributeMetadata>
+
+    <AttributeMetadata>
+      <Name>httpMethod</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <Default>get</Default>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="auth-method-guid">
+        <Label language="EN">HTTP Methods</Label>
+      </GuiLabels>
+      <FixedValues>
+        <FixedValue>
+          <Value>get</Value>
+          <GuiLabels guid="GUID‑GET">
+            <Label language="EN">GET</Label>
+            <Label language="DE">GET</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>head</Value>
+          <GuiLabels guid="GUID‑HEAD">
+            <Label language="EN">HEAD</Label>
+            <Label language="DE">HEAD</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>post</Value>
+          <GuiLabels guid="GUID‑POST">
+            <Label language="EN">POST</Label>
+            <Label language="DE">POST</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>put</Value>
+          <GuiLabels guid="GUID‑PUT">
+            <Label language="EN">PUT</Label>
+            <Label language="DE">PUT</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>patch</Value>
+          <GuiLabels guid="GUID‑PATCH">
+            <Label language="EN">PATCH</Label>
+            <Label language="DE">PATCH</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>delete</Value>
+          <GuiLabels guid="GUID‑DELETE">
+            <Label language="EN">DELETE</Label>
+            <Label language="DE">DELETE</Label>
+          </GuiLabels>
+        </FixedValue>
+        <FixedValue>
+          <Value>options</Value>
+          <GuiLabels guid="GUID‑OPTIONS">
+            <Label language="EN">OPTIONS</Label>
+            <Label language="DE">OPTIONS</Label>
+          </GuiLabels>
+        </FixedValue>
+      </FixedValues>
+    </AttributeMetadata>
+
+    <AttributeMetadata>
+      <Name>clientId</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="client-id-guid">
+        <Label language="EN">Client ID</Label>
+      </GuiLabels>
+    </AttributeMetadata>
+
+    <AttributeMetadata>
+      <Name>clientSecret</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="client-secret-guid">
+        <Label language="EN">Client Secret</Label>
+      </GuiLabels>
+    </AttributeMetadata>
+
+    <AttributeMetadata>
+      <Name>url</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="wiremock-url-guid">
+        <Label language="EN">URL</Label>
+      </GuiLabels>
+    </AttributeMetadata>
+
+    <AttributeMetadata>
+      <Name>tokenEndpoint</Name>
+      <Usage>true</Usage>
+      <DataType>xsd:string</DataType>
+      <isparameterized>true</isparameterized>
+      <GuiLabels guid="token-endpoint-url-guid">
+        <Label language="EN">Token Endpoint</Label>
+      </GuiLabels>
+    </AttributeMetadata>
+
 </ComponentMetadata>

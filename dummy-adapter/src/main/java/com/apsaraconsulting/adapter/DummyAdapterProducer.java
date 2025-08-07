@@ -1,9 +1,23 @@
 package com.apsaraconsulting.adapter;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.camel.Exchange;
 import org.apache.camel.support.DefaultProducer;
+import org.apache.http.HttpHeaders;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 /**
  * Dummy Adapter Camel Producer
@@ -18,37 +32,107 @@ public class DummyAdapterProducer extends DefaultProducer {
 
     @Override
     public void process(Exchange exchange) throws Exception {
-        DummyAdapterEndpoint endpoint = (DummyAdapterEndpoint) getEndpoint();
-
-        // Get the message body
-        String body = exchange.getIn().getBody(String.class);
-
-        // Create the dummy adapter message
-        String message;
-        if (body != null && !body.trim().isEmpty()) {
-            message = String.format("%s %s from %s!",
-                endpoint.getGreeting(),
-                body,
-                endpoint.getName() != null ? endpoint.getName() : "DummyAdapter");
+        DummyAdapterEndpoint endpoint = getEndpoint();
+        /// Set default to Salesforce
+        String target = endpoint.getTargetSystem();
+        if ("WireMock".equalsIgnoreCase(target)) {
+            invokeWiremock(exchange, endpoint);
         } else {
-            message = String.format("%s %s!",
-                endpoint.getGreeting(),
-                endpoint.getName() != null ? endpoint.getName() : "DummyAdapter");
+            invokeSalesforce(exchange,endpoint);
         }
 
-        // Apply uppercase if configured
-        if (endpoint.isUppercase()) {
-            message = message.toUpperCase();
+    }
+
+    private void createExchange(Exchange exchange, DummyAdapterEndpoint endpoint) {
+        /// Prepare HTTP client
+        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            String apiUrl = endpoint.getUrl();
+            HttpPost postRequest = new HttpPost(apiUrl);
+
+            /// Add basic auth header
+            String auth = endpoint.getUsername() + ":" + endpoint.getPassword();
+            String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+            postRequest.setHeader(HttpHeaders.AUTHORIZATION, "Basic " + encodedAuth);
+            postRequest.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+
+            /// Set body if needed
+            String inputBody = exchange.getIn().getBody(String.class);
+            postRequest.setEntity(new StringEntity(inputBody != null ? inputBody : "{}"));
+
+            /// Execute request
+            try (CloseableHttpResponse response = httpClient.execute(postRequest)) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                exchange.getIn().setBody(responseBody);
+                LOG.info("Processed dummy adapter message: {}", response);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
-        // Set the response
-        exchange.getIn().setBody(message);
-
-        LOG.info("Processed dummy adapter message: {}", message);
     }
 
     @Override
     public DummyAdapterEndpoint getEndpoint() {
         return (DummyAdapterEndpoint) super.getEndpoint();
     }
+
+    private void invokeSalesforce(Exchange exchange,DummyAdapterEndpoint endpoint) throws Exception {
+        String authMethod = endpoint.getSalesforceAuth();
+        String tokenEndpoint = endpoint.getTokenEndpoint();
+        String clientId = endpoint.getClientId();
+        String clientSecret = endpoint.getClientSecret();
+
+        String accessToken;
+        String instanceUrl;
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        HttpPost post = new HttpPost(tokenEndpoint);
+        post.setHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        String payload;
+        if ("password".equalsIgnoreCase(authMethod)) {
+            String username = endpoint.getUsername();
+            String password = endpoint.getPassword();
+
+            payload = String.format(
+                "grant_type=password&client_id=%s&client_secret=%s&username=%s&password=%s",
+                clientId, clientSecret, username, password);
+
+        } else if ("client_credentials".equalsIgnoreCase(authMethod)) {
+            payload = String.format(
+                "grant_type=client_credentials&client_id=%s&client_secret=%s",
+                clientId, clientSecret);
+        } else {
+            throw new IllegalArgumentException("Unsupported Salesforce auth method: " + authMethod);
+        }
+
+        post.setEntity(new StringEntity(payload));
+        HttpResponse response = httpClient.execute(post);
+        String tokenJson = EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
+        JsonNode tokenResponse = objectMapper.readTree(tokenJson);
+
+        accessToken = tokenResponse.get("access_token").asText();
+        instanceUrl = tokenResponse.has("instance_url")
+            ? tokenResponse.get("instance_url").asText()
+            : endpoint.getUrl();
+
+        /// Call Salesforce API
+        HttpGet get = new HttpGet(instanceUrl + "/services/data/v56.0/sobjects/Account/");
+        get.setHeader("Authorization", "Bearer " + accessToken);
+
+        HttpResponse salesforceResponse = httpClient.execute(get);
+        String salesforceData = EntityUtils.toString(salesforceResponse.getEntity(), StandardCharsets.UTF_8);
+
+        LOG.info("Salesforce API response: {}", salesforceData);
+        exchange.getIn().setBody(salesforceData);
+
+        httpClient.close();
+    }
+
+    private void invokeWiremock(Exchange exchange, DummyAdapterEndpoint endpoint) {
+        createExchange(exchange, endpoint);
+    }
+
+
 }

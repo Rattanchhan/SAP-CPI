@@ -1,8 +1,12 @@
 package com.apsaraconsulting.adapter;
 
+import com.apsaraconsulting.adapter.cemalRoute.AdapterRoute;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
+import org.apache.camel.ProducerTemplate;
 import org.apache.camel.support.DefaultProducer;
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
@@ -22,6 +26,7 @@ import java.util.Base64;
 /**
  * Dummy Adapter Camel Producer
  */
+@Slf4j
 public class DummyAdapterProducer extends DefaultProducer {
 
     private static final Logger LOG = LoggerFactory.getLogger(DummyAdapterProducer.class);
@@ -131,8 +136,16 @@ public class DummyAdapterProducer extends DefaultProducer {
     }
 
     private void invokeWiremock(Exchange exchange, DummyAdapterEndpoint endpoint) {
-        createExchange(exchange, endpoint);
-    }
+        //createExchange(exchange, endpoint);
+        try {
+            CamelContext context = exchange.getContext();
+            context.addRoutes(new AdapterRoute());
+            ProducerTemplate template = context.createProducerTemplate();
 
+            String result = template.requestBody("direct:invokeSalesforce", null, String.class);
+            exchange.getIn().setBody(result);
+        } catch (Exception ignored) {
+        }
+    }
 
 }

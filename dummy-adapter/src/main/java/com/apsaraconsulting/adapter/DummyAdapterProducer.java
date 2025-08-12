@@ -23,6 +23,9 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
+//import static com.apsaraconsulting.adapter.DummyAdapterProducer.LogLevel.INFO;
+import static java.lang.String.format;
+
 /**
  * Dummy Adapter Camel Producer
  */
@@ -100,12 +103,12 @@ public class DummyAdapterProducer extends DefaultProducer {
             String username = endpoint.getUsername();
             String password = endpoint.getPassword();
 
-            payload = String.format(
+            payload = format(
                 "grant_type=password&client_id=%s&client_secret=%s&username=%s&password=%s",
                 clientId, clientSecret, username, password);
 
         } else if ("client_credentials".equalsIgnoreCase(authMethod)) {
-            payload = String.format(
+            payload = format(
                 "grant_type=client_credentials&client_id=%s&client_secret=%s",
                 clientId, clientSecret);
         } else {
@@ -144,8 +147,28 @@ public class DummyAdapterProducer extends DefaultProducer {
 
             String result = template.requestBody("direct:invokeSalesforce", null, String.class);
             exchange.getIn().setBody(result);
+            logging("Result: "+result,LOG);
         } catch (Exception ignored) {
         }
+    }
+
+    public void logging(String msg,Logger logger) {
+        logger.error("{}", buildMethodInfo()+msg);
+    }
+
+    private String buildMethodInfo() {
+        return format("%s-LEVEL #%s:%d ",
+            LogLevel.INFO,
+            Thread.currentThread().getStackTrace()[3].getMethodName(),
+            Thread.currentThread().getStackTrace()[3].getLineNumber()
+        );
+    }
+    public enum LogLevel {
+        TRACE,
+        DEBUG,
+        INFO,
+        WARN,
+        ERROR
     }
 
 }

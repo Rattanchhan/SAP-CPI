@@ -154,7 +154,7 @@ public class DummyAdapterProducer extends DefaultProducer {
             String result = template.requestBody("direct:invokeSalesforce", null, String.class);
             exchange.getIn().setBody(result);
             logging("Result: "+result,LOG);
-            messageLogFactory.integrateIntoMPL(exchange);
+            messageLogFactory.integrateIntoTracing(exchange);
         } catch (Exception ignored) {
         }
     }

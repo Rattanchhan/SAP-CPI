@@ -1,8 +1,12 @@
 package com.apsaraconsulting.adapter;
 
+import com.apsaraconsulting.adapter.MPL.MessageLogFactory;
 import com.apsaraconsulting.adapter.cemalRoute.AdapterRoute;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sap.it.api.ITApiFactory;
+import com.sap.it.api.msglog.adapter.AdapterMessageLogFactory;
+import com.sap.it.api.msglog.adapter.AdapterMessageLogWithStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -22,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.Date;
 
 //import static com.apsaraconsulting.adapter.DummyAdapterProducer.LogLevel.INFO;
 import static java.lang.String.format;
@@ -141,6 +146,7 @@ public class DummyAdapterProducer extends DefaultProducer {
     private void invokeWiremock(Exchange exchange, DummyAdapterEndpoint endpoint) {
         //createExchange(exchange, endpoint);
         try {
+            MessageLogFactory messageLogFactory = new  MessageLogFactory();
             CamelContext context = exchange.getContext();
             context.addRoutes(new AdapterRoute());
             ProducerTemplate template = context.createProducerTemplate();
@@ -148,6 +154,7 @@ public class DummyAdapterProducer extends DefaultProducer {
             String result = template.requestBody("direct:invokeSalesforce", null, String.class);
             exchange.getIn().setBody(result);
             logging("Result: "+result,LOG);
+            messageLogFactory.integrateIntoMPL(exchange);
         } catch (Exception ignored) {
         }
     }
